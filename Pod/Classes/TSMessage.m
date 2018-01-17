@@ -192,7 +192,7 @@ __weak static UIViewController *_defaultViewController;
     
     void (^addStatusBarHeightToVerticalOffset)() = ^void() {
         
-        if (currentView.messagePosition == TSMessageNotificationPositionNavBarOverlay){
+        if (currentView.messagePosition == TSMessageNotificationPositionNavBarOverlay || ![currentView.viewController.parentViewController isKindOfClass:[UINavigationController class]]){
             return;
         }
         
